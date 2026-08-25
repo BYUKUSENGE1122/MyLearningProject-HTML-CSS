@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure Portal | Authenticate</title>
+    <link rel="stylesheet" href="Skeet-secure-Login.css" />
+  </head>
+  <body>
+    <!-- Upper Utility Branding Bar -->
+    <header class="login-header">
+      <div class="header-wrap">
+        <div class="brand-core">Secure<span>Shield</span></div>
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+      </div>
+    </header>
+
+    <!-- Main Visual Workspace Wrapper -->
+    <main class="auth-workspace">
+      <div class="cyber-blur-anchor-1"></div>
+      <div class="cyber-blur-anchor-2"></div>
+
+      <!-- High-Fidelity Glassmorphic Login Panel -->
+      <div class="login-card-container">
+        <div class="card-branding-shield">
+          <!-- Decorative Modern Cryptography Security Glyph -->
+          <div class="shield-glyph">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+              <path
+                d="M12 2L3 6V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V6L12 2Z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 7V13"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="12" cy="16.5" r="0.5" fill="currentColor" />
+            </svg>
+          </div>
+          <h2>Secure Gateway</h2>
+          <p class="card-subtitle">Identity Verification Protocol Required</p>
+        </div>
+
+        <!-- Access Request Form Framework -->
+        <form class="secure-form" onsubmit="event.preventDefault()">
+          <!-- Input Block 1: User Reference -->
+          <div class="input-group-field">
+            <input
+              type="text"
+              id="username"
+              placeholder=" "
+              required
+              autocomplete="off"
+            />
+            <label for="username">Username or Operator ID</label>
+            <div class="input-highlight-bar"></div>
+          </div>
+
+          <!-- Input Block 2: Key Phrase -->
+          <div class="input-group-field">
+            <input type="password" id="password" placeholder=" " required />
+            <label for="password">Security Passphrase</label>
+            <div class="input-highlight-bar"></div>
+          </div>
+
+          <!-- Micro-Utility Control Fields -->
+          <div class="form-utilities-row">
+            <label class="checkbox-ui-label">
+              <input type="checkbox" />
+              <span class="custom-checkmark-box"></span>
+              <span class="label-copy">Authorize Device Trust</span>
+            </label>
+            <a href="#" class="recovery-trigger">Key Retrieval</a>
+          </div>
+
+          <!-- Core Call to Action Submission Trigger -->
+          <button type="submit" class="auth-submit-btn">
+            <span class="btn-text">Initiate Authentication</span>
+            <span class="btn-glow-layer"></span>
+          </button>
+        </form>
+
+        <!-- Secondary Framework Routing -->
+        <div class="card-footer-navigation">
+          <p>New Operator? <a href="#">Request Credentials</a></p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

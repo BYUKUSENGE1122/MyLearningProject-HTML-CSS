@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: linear-gradient(135deg, rgb(2, 2, 39), #0a0a5e);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.webId {
+  color: whitesmoke;
+  padding: 30px;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  background: linear-gradient(to right, rgb(90, 85, 85), darkblue);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  color: white;
+  font-family: "Courier New", monospace;
+  font-size: 28px;
+  padding: 10px 0;
+  letter-spacing: 1px;
+}
+
+#WebCont p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 8px;
+}
+
+.form-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 25px 20px;
+  margin-top: 20px;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  color: whitesmoke;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+input:focus {
+  border-color: rgb(255, 187, 0);
+  box-shadow: 0 0 0 3px rgba(255, 187, 0, 0.3);
+  background: white;
+}
+
+.hint {
+  font-size: 13px;
+  color: #cccccc;
+  margin: 12px 0;
+}
+
+button {
+  padding: 12px 20px;
+  color: white;
+  background: linear-gradient(to right, rgb(80, 5, 5), rgb(140, 20, 20));
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  width: 100%;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 8px 0;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(to right, rgb(140, 20, 20), rgb(180, 30, 30));
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}

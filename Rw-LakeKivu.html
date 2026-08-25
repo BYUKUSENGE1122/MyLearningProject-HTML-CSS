@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lake Kivu Serenity Guide - Explore Rwanda</title>
+    <link rel="stylesheet" href="Rw-LakeKivu.css" />
+    <!-- Google Fonts required by your custom CSS template -->
+    <link href="https://googleapis.com" rel="stylesheet" />
+    <style>
+      /* Custom extension style to display real hotel photo cards safely */
+      .pack-img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 0.75rem;
+        display: block;
+      }
+      .packing-grid.hotels-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sticky Top Navigation Bar -->
+    <nav class="top-nav">
+      <div class="nav-container">
+        <a href="Rwanda-explore.html" class="back-link">
+          <svg
+            class="nav-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Return to Explore Rwanda</span>
+        </a>
+        <span class="nav-branding">Rwanda Features</span>
+      </div>
+    </nav>
+
+    <!-- Hero Header Section with High-Res Lake Kivu Background Override -->
+    <header
+      class="guide-hero"
+      style="
+        background-image:
+          linear-gradient(rgba(11, 60, 38, 0.82), rgba(11, 60, 38, 0.92)),
+          url(&quot;https://th.bing.com/th/id/OIP.hFtBrwZESue7qWBaqnt-4gHaEK?w=306&h=180&c=7&r=0&o=7&pid=1.7&rm=3&quot;);
+      "
+    >
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="guide-tag">Relaxation & Leisure</span>
+        <h1 class="guide-title">Lake Kivu Serenity</h1>
+        <p class="guide-subtitle">
+          Unwind along Africa's sixth-largest lake—a paradise of calm waters,
+          tropical beaches, and rolling emerald hills.
+        </p>
+      </div>
+    </header>
+
+    <!-- Main Content Layout Container -->
+    <main class="guide-container">
+      <!-- Section 1: Overview -->
+      <section class="guide-section">
+        <h2 class="section-heading">What is Lake Kivu Serenity?</h2>
+        <p>
+          Stretching broadly down Rwanda's western border,
+          <strong>Lake Kivu</strong> provides the ultimate relaxation escape. It
+          stands as one of Africa's Great Lakes, featuring crystal-clear waters
+          that are safely free from crocodiles, hippos, and bilharzia parasite
+          concerns.
+        </p>
+        <p>
+          It acts as the perfect scenic sanctuary to decompress and recharge
+          your energy directly after completing intense high-altitude wildlife
+          safaris or gorilla tracking expeditions in northern ranges.
+        </p>
+
+        <!-- Visual Process Block Diagram -->
+        <div class="visual-diagram">
+          <div class="diagram-node">Volcanoes Safaris</div>
+          <div class="diagram-arrow">
+            <span>Relax & Unwind Journey</span>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+          <div class="diagram-node node-highlight">Lake Kivu Serenity</div>
+        </div>
+      </section>
+
+      <!-- Section 2: Premium Shoreline Lodging (Hotels with Real Images) -->
+      <section class="guide-section">
+        <h2 class="section-heading">Luxury Resorts & Accommodations</h2>
+        <p>
+          The pristine shoreline is decorated with gorgeous boutique resorts
+          offering private sandy beachfronts and infinity pools overlooking the
+          water expanse.
+        </p>
+
+        <div class="packing-grid hotels-grid">
+          <div class="pack-item">
+            <img
+              src="data:image/webp;base64,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"
+              alt="Lake Kivu Serena Hotel"
+              class="pack-img"
+            />
+            <h4>Lake Kivu Serena</h4>
+            <p>
+              <strong>Rubavu Hub:</strong> A 4-star resort featuring tropical
+              gardens, a private palm-lined sand beach, and spectacular views of
+              the Virunga Volcanoes.
+            </p>
+          </div>
+          <div class="pack-item">
+            <img
+              src="data:image/webp;base64,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"
+              alt="Mantis Kivu Marina Bay"
+              class="pack-img"
+            />
+            <h4>Mantis Marina Bay</h4>
+            <p>
+              <strong>Cyangugu Hub:</strong> An elegant, contemporary luxury
+              hotel positioned on the south edge of the lake with close
+              proximity to Nyungwe Forest.
+            </p>
+          </div>
+          <div class="pack-item">
+            <img
+              src="https://th.bing.com/th/id/OIP.7l1BOgUM6BGJukqOavnh8gHaF4?w=225&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+              alt="Cormoran Lodge Kibuye"
+              class="pack-img"
+            />
+            <h4>Cormoran Lodge</h4>
+            <p>
+              <strong>Karongi Hub:</strong> Beautiful wood cabins perched on
+              steep eucalyptus hillsides, offering dramatic panorama views of
+              hidden island channels.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide-section">
+        <h2 class="section-heading">Unforgettable Lake Activities</h2>
+        <p>
+          Whether you crave peaceful water expeditions or dynamic sports
+          exploration, the lake offers an abundant choice of activities:
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="time-marker">Day Cruise</div>
+            <div class="timeline-content">
+              <h3>Napoleon Island Boat Exploration</h3>
+              <p>
+                Cruise by boat to historic Napoleon Island. Embark on a light
+                uphill hike to witness panoramic lake borders and observe the
+                massive colony of thousands of straw-colored fruit bats living
+                at the summit.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="time-marker">Sunset</div>
+            <div class="timeline-content">
+              <h3>Traditional Night Fishermen Experience</h3>
+              <p>
+                As dusk sets in, paddle out alongside the multi-canoe musical
+                fleets of local singing fishermen. Listen to their melodic folk
+                chants echo across the water as they cast traditional netting
+                gear under the stars.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="time-marker">Adventure</div>
+            <div class="timeline-content">
+              <h3>Kayaking & The Congo Nile Trail</h3>
+              <p>
+                Glide silently through emerald bays on a guided sea kayak trek,
+                or tackle segments of the legendary 227-kilometer Congo Nile
+                Trail via mountain bike or hiking boots.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Key Travel Infrastructure Info -->
+      <section class="guide-section">
+        <h2 class="section-heading">Essential Tourism Navigation</h2>
+        <p>
+          Planning your transit correctly ensures a seamless connection between
+          Rwanda's wild capital and its peaceful western beaches.
+        </p>
+
+        <div class="table-wrapper">
+          <table class="rules-table">
+            <thead>
+              <tr>
+                <th>Shoreline Destination Town</th>
+                <th>Travel Logistics & Infrastructure Info</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Rubavu (Gisenyi)</strong></td>
+                <td>
+                  Located 3 hours northwest of Kigali via road transit. It is
+                  the closest lakeside resort hub to Volcanoes National Park,
+                  perfect for beach relaxation after gorilla tracking.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Karongi (Kibuye)</strong></td>
+                <td>
+                  Situated 2 hours west of Kigali. Known for its quiet
+                  atmosphere, pine-filled hillsides, and beautiful boat tours
+                  around Peace Island.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Cyangugu (Rusizi)</strong></td>
+                <td>
+                  Positioned 5 hours south of Kigali. It features the regional
+                  Kamembe Airport for daily domestic flights and sits directly
+                  adjacent to Nyungwe Rainforest.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Safety Standard</strong></td>
+                <td>
+                  The water is clean and safe for swimming. Always stick to
+                  designated resort beach zones and secure device wrist straps
+                  when out on boat cruises.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Bottom Page Return Action Footer Button -->
+      <div class="bottom-actions">
+        <a href="Rwanda-explore.html" class="big-return-btn">
+          <svg
+            class="btn-arrow"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Back to Explore Rwanda Hub</span>
+        </a>
+      </div>
+    </main>
+  </body>
+</html>

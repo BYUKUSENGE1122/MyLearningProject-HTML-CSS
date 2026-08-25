@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sabato Anick (Satto) — software developer in Kigali, Rwanda. Connect, view skills and projects, or get in touch."
+    />
+    <title>About Me & Contact — Sabato Anick</title>
+
+    <!--
+      This file is self-contained: all styles live in the <style> block
+      below so it works the moment you open it. If you'd rather split
+      styles out for maintainability on a larger site, uncomment the
+      line below and move the contents of the <style> block into
+      contact.css — everything is already organised as plain classes,
+      so the move is a straight copy/paste with no rewrite needed.
+
+      <link rel="stylesheet" href="contact.css" />
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --ink: #0f1420;
+        --surface: #161c2c;
+        --surface-border: #262f45;
+        --text: #ece7dd;
+        --text-dim: #a9b1c3;
+        --accent: #d9a24b;
+        --accent-soft: #e8c07f;
+        --available: #7fb08a;
+        --focus-ring: #e8c07f;
+
+        --font-display: "Fraunces", Georgia, serif;
+        --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-mono: "Space Mono", "Courier New", monospace;
+
+        --radius: 16px;
+        --max-width: 960px;
+        color-scheme: dark;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background-color: var(--ink);
+        background-image: radial-gradient(circle, #1c2438 1px, transparent 1px);
+        background-size: 24px 24px;
+        color: var(--text);
+        font-family: var(--font-body);
+        line-height: 1.6;
+        font-size: clamp(1rem, 0.95rem + 0.2vw, 1.0625rem);
+      }
+
+      a {
+        color: inherit;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: var(--font-display);
+        margin: 0;
+        line-height: 1.2;
+      }
+      .skip-link {
+        position: absolute;
+        left: 1rem;
+        top: -3rem;
+        background: var(--accent);
+        color: var(--ink);
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: top 0.2s ease;
+        z-index: 100;
+      }
+
+      .skip-link:focus {
+        top: 1rem;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--focus-ring);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+
+      .page {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: clamp(1.25rem, 4vw, 3rem);
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .profile-card {
+        background: var(--surface);
+        border: 1px solid var(--surface-border);
+        border-radius: var(--radius);
+        padding: clamp(1.5rem, 4vw, 2.5rem);
+      }
+
+      .dev-status {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--available);
+        margin-bottom: 1rem;
+      }
+
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--available);
+        box-shadow: 0 0 0 0 rgba(127, 176, 138, 0.6);
+        animation: pulse 2.4s ease-out infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(127, 176, 138, 0.45);
+        }
+        70% {
+          box-shadow: 0 0 0 8px rgba(127, 176, 138, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(127, 176, 138, 0);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .status-dot {
+          animation: none;
+        }
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      .profile-card h1 {
+        font-size: clamp(1.6rem, 4vw, 2.25rem);
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 0.75rem;
+      }
+
+      .bio-text {
+        color: var(--text-dim);
+        max-width: 62ch;
+        margin: 0;
+      }
+
+      .bio-text span {
+        display: block;
+        margin-top: 0.4rem;
+      }
+      .section-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-top: 1.5rem;
+      }
+
+      .section-nav a {
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+        color: var(--text-dim);
+        border: 1px solid var(--surface-border);
+        border-radius: 999px;
+        padding: 0.4rem 0.9rem;
+        transition:
+          border-color 0.2s ease,
+          color 0.2s ease;
+      }
+
+      .section-nav a:hover {
+        color: var(--accent-soft);
+        border-color: var(--accent);
+      }
+      .card-section {
+        background: var(--surface);
+        border: 1px solid var(--surface-border);
+        border-radius: var(--radius);
+        padding: clamp(1.5rem, 4vw, 2.25rem);
+      }
+
+      .card-section h2 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 1.25rem;
+      }
+
+      .card-section > p.section-lede {
+        color: var(--text-dim);
+        margin: -0.75rem 0 1.25rem;
+        max-width: 60ch;
+      }
+
+      .connect-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 0.75rem;
+      }
+
+      .connect-list a,
+      .connect-list .static-entry {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+        padding: 0.85rem 1rem;
+        border: 1px solid var(--surface-border);
+        border-radius: 10px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.02);
+        transition:
+          border-color 0.2s ease,
+          transform 0.15s ease;
+      }
+
+      .connect-list a:hover {
+        border-color: var(--accent);
+        transform: translateY(-1px);
+      }
+
+      .link-label {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--text-dim);
+      }
+
+      .link-value {
+        font-weight: 600;
+        color: var(--text);
+        word-break: break-word;
+      }
+
+      .skills-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+      }
+
+      .skills-list li {
+        font-family: var(--font-mono);
+        font-size: 0.82rem;
+        border: 1px solid var(--surface-border);
+        border-radius: 999px;
+        padding: 0.4rem 0.9rem;
+        background: rgba(217, 162, 75, 0.08);
+        color: var(--accent-soft);
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1rem;
+      }
+
+      .project-card {
+        border: 1px solid var(--surface-border);
+        border-radius: 12px;
+        padding: 1.1rem 1.2rem;
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .project-card h3 {
+        font-size: 1.02rem;
+        font-weight: 600;
+        margin-bottom: 0.4rem;
+        color: var(--text);
+      }
+
+      .project-card p {
+        margin: 0 0 0.7rem;
+        color: var(--text-dim);
+        font-size: 0.92rem;
+      }
+
+      .project-tag {
+        display: inline-block;
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--available);
+      }
+
+      .contact-form {
+        display: grid;
+        gap: 1rem;
+        max-width: 480px;
+      }
+
+      .form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+
+      .form-field label {
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--text-dim);
+      }
+
+      .form-field input,
+      .form-field textarea {
+        background: var(--ink);
+        border: 1px solid var(--surface-border);
+        border-radius: 8px;
+        color: var(--text);
+        font-family: var(--font-body);
+        font-size: 1rem;
+        padding: 0.65rem 0.8rem;
+      }
+
+      .form-field textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      .form-note {
+        font-size: 0.82rem;
+        color: var(--text-dim);
+        margin: -0.3rem 0 0;
+      }
+
+      .submit-btn {
+        justify-self: start;
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        background: var(--accent);
+        color: var(--ink);
+        border: none;
+        border-radius: 999px;
+        padding: 0.65rem 1.4rem;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+      }
+
+      .submit-btn:hover {
+        background: var(--accent-soft);
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 999px;
+        padding: 0.75rem 1.4rem;
+        border: 1px solid var(--surface-border);
+        transition:
+          border-color 0.2s ease,
+          background-color 0.2s ease,
+          transform 0.15s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn--primary {
+        background: var(--accent);
+        color: var(--ink);
+        border-color: var(--accent);
+      }
+
+      .btn--primary:hover {
+        background: var(--accent-soft);
+        border-color: var(--accent-soft);
+      }
+
+      .btn--ghost {
+        background: transparent;
+        color: var(--text);
+      }
+
+      .btn--ghost:hover {
+        border-color: var(--accent);
+        color: var(--accent-soft);
+      }
+
+      .btn svg {
+        flex-shrink: 0;
+      }
+
+      footer {
+        text-align: center;
+        padding: 1.5rem 0 0.5rem;
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        color: var(--text-dim);
+      }
+
+      @media (max-width: 560px) {
+        .cta-row {
+          flex-direction: column;
+        }
+
+        .btn {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="page">
+      <header class="profile-card">
+        <p class="dev-status">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>Available for projects</span>
+        </p>
+        <h1>Who is Satto Yannick??</h1>
+        <p class="bio-text">
+          Hello, I'm a passionate web developer!
+          <span>
+            I love creating beautiful, high-performance, and deeply functional
+            websites.
+          </span>
+        </p>
+
+        <nav class="section-nav" aria-label="Page sections">
+          <a href="#connect">Connect</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact-form">Message</a>
+        </nav>
+      </header>
+
+      <main id="main-content">
+        <section
+          class="card-section"
+          id="connect"
+          aria-labelledby="connect-heading"
+        >
+          <h2 id="connect-heading">Connect With Me</h2>
+
+          <ul class="connect-list">
+            <li>
+              <a href="mailto:byusatto1122@gmail.com">
+                <span class="link-label">📩 Email Direct</span>
+                <span class="link-value">byusatto1122@gmail.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+250788123456">
+                <span class="link-label">📞 Phone Line</span>
+                <span class="link-value">+250 788 123 456</span>
+              </a>
+            </li>
+            <li>
+              <a href="2ndProject.html">
+                <span class="link-label">🌐 Web Space</span>
+                <span class="link-value">My Portfolio</span>
+              </a>
+            </li>
+            <li>
+              <div class="static-entry">
+                <span class="link-label">⭕ Base Location</span>
+                <span class="link-value">Kigali, Rwanda</span>
+              </div>
+            </li>
+            <li>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Sabato Anick on LinkedIn (opens in a new tab)"
+              >
+                <span class="link-label">⭕ LinkedIn</span>
+                <span class="link-value">Sabato Anick</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.github.com/BYUKUSENGE1122"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="BYUKUSENGE1122 on GitHub (opens in a new tab)"
+              >
+                <span class="link-label">⭕ GitHub Code</span>
+                <span class="link-value">BYUKUSENGE1122</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Satto Byusa on Facebook (opens in a new tab)"
+              >
+                <span class="link-label">⭕ Facebook</span>
+                <span class="link-value">Satto Byusa</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/satto_official250"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="satto_official250 on Instagram (opens in a new tab)"
+              >
+                <span class="link-label">⭕ Instagram</span>
+                <span class="link-value">satto_official250</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.threads.net/@satto_official250"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="satto_official250 on Threads (opens in a new tab)"
+              >
+                <span class="link-label">⭕ Threads Hub</span>
+                <span class="link-value">satto_official250</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section
+          class="card-section"
+          id="skills"
+          aria-labelledby="skills-heading"
+        >
+          <h2 id="skills-heading">Skills & Tooling</h2>
+          <p class="section-lede">
+            Languages, frameworks, and tools I build with day to day.
+          </p>
+          <ul class="skills-list">
+            <li>HTML &amp; CSS</li>
+            <li>JavaScript (ES6+)</li>
+            <li>React.js</li>
+            <li>Node.js</li>
+            <li>SQL &amp; Database Design</li>
+            <li>Git &amp; GitHub</li>
+            <li>Responsive / Accessible UI</li>
+          </ul>
+        </section>
+
+        <section
+          class="card-section"
+          id="projects"
+          aria-labelledby="projects-heading"
+        >
+          <h2 id="projects-heading">Project Showcase</h2>
+          <p class="section-lede">
+            A quick look at recent builds — see the full write-ups on my
+            portfolio.
+          </p>
+          <div class="project-grid">
+            <article class="project-card">
+              <h3>Satto Cinema</h3>
+              <p>
+                A cinema-themed movie shop with a ticket-stub card design and
+                vanilla JS interactivity.
+              </p>
+              <span class="project-tag">HTML · CSS · JS</span>
+            </article>
+            <article class="project-card">
+              <h3>Spanish Color Vocabulary</h3>
+              <p>
+                An interactive vocabulary page styled like paint-chip cards for
+                learning color words.
+              </p>
+              <span class="project-tag">HTML · CSS</span>
+            </article>
+            <article class="project-card">
+              <h3>QuickMedConnect</h3>
+              <p>
+                A healthcare platform concept for Rwanda with role-based
+                Patient, Doctor, and Admin dashboards.
+              </p>
+              <span class="project-tag">UI/UX · Concept</span>
+            </article>
+            <article class="project-card">
+              <h3>Igire Trade Hub</h3>
+              <p>
+                An agricultural marketplace concept connecting Rwandan farmers
+                and traders, with live price data.
+              </p>
+              <span class="project-tag">Concept · Frontend</span>
+            </article>
+          </div>
+        </section>
+
+        <section
+          class="card-section"
+          id="contact-form"
+          aria-labelledby="contact-form-heading"
+        >
+          <h2 id="contact-form-heading">Send Me a Message</h2>
+          <p class="section-lede" id="contact-form-note">
+            This form is a front-end placeholder — it isn't wired up to a
+            backend yet, so messages won't actually send. Use the email link
+            above until that's connected.
+          </p>
+          <form
+            class="contact-form"
+            aria-labelledby="contact-form-heading"
+            aria-describedby="contact-form-note"
+            onsubmit="event.preventDefault()"
+          >
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                required
+              />
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn" aria-disabled="true">
+              Send message (demo)
+            </button>
+          </form>
+        </section>
+
+        <section class="card-section" aria-labelledby="next-steps-heading">
+          <h2 id="next-steps-heading" class="visually-hidden">
+            Résumé and portfolio links
+          </h2>
+          <div class="cta-row">
+            <a href="MyResume.html" class="btn btn--primary" download>
+              <span>Download my résumé</span>
+            </a>
+            <a href="index.html" class="btn btn--ghost">
+              <span>Explore my full portfolio</span>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; 2024–2026 Sabato Anick. Built in Kigali, Rwanda.</p>
+      </footer>
+    </div>
+  </body>
+</html>

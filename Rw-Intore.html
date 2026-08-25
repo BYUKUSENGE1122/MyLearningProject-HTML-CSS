@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intore Cultural Dance Guide - Explore Rwanda</title>
+    <link rel="stylesheet" href="Rw-Intore.css" />
+    <link href="https://googleapis.com" rel="stylesheet" />
+    <style>
+      .pack-img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 0.75rem;
+        display: block;
+      }
+      .packing-grid.cultural-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="top-nav">
+      <div class="nav-container">
+        <a href="Rwanda-explore.html" class="back-link">
+          <svg
+            class="nav-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Return to Explore Rwanda</span>
+        </a>
+        <span class="nav-branding">Rwanda Features</span>
+      </div>
+    </nav>
+    <header
+      class="guide-hero"
+      style="
+        background-image:
+          linear-gradient(rgba(11, 60, 38, 0.82), rgba(11, 60, 38, 0.92)),
+          url(&quot;data:image/webp;base64,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&quot;);
+      "
+    >
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="guide-tag">Heritage & Artistry</span>
+        <h1 class="guide-title">Intore Cultural Dance</h1>
+        <p class="guide-subtitle">
+          Experience the "Dance of Heroes"—a powerful, high-energy centuries-old
+          celebration of Rwandan pride, strength, and grace.
+        </p>
+      </div>
+    </header>
+    <main class="guide-container">
+      <section class="guide-section">
+        <h2 class="section-heading">What is the Intore Dance?</h2>
+        <p>
+          The <strong>Intore Dance</strong> is Rwanda’s most iconic cultural art
+          form. Historically performed exclusively for the Royal Court (the
+          *Mwami*), "Intore" translates directly to "The Chosen Ones" or "The
+          Elite."
+        </p>
+        <p>
+          Today, this breathtaking performance features rhythmic, high-jumping
+          male warriors wearing long, flowing sisal wigs meant to mimic a lion’s
+          mane, accompanied by graceful female dancers who mirror the elegant,
+          sweeping movements of Rwanda's sacred Ankole longhorn cattle.
+        </p>
+        <div class="visual-diagram">
+          <div class="diagram-node">Royal Heritage</div>
+          <div class="diagram-arrow">
+            <span>Rhythm, Chants, & Jumps</span>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+          <div class="diagram-node node-highlight">The Dance of Heroes</div>
+        </div>
+      </section>
+
+      <section class="guide-section">
+        <h2 class="section-heading">The Core Elements of the Performance</h2>
+        <p>
+          An authentic Intore performance is divided into unique sections, each
+          showcasing a different element of traditional Rwandan life, hunting,
+          and warfare celebration.
+        </p>
+
+        <div class="packing-grid cultural-grid">
+          <div class="pack-item">
+            <img
+              src="https://th.bing.com/th/id/OIP.vTSKOsqx1Xnc-e_REpglSgHaGh?w=186&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+              alt="Ingoma Drums"
+              class="pack-img"
+            />
+            <h4>The Ingoma Drums</h4>
+            <p>
+              The heartbeat of the dance. Massive wooden hand-carved drums
+              played in highly synchronized, thunderous ensembles that build the
+              energy for the dancers.
+            </p>
+          </div>
+          <div class="pack-item">
+            <img
+              src="data:image/webp;base64,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"
+              alt="Warrior Regalia"
+              class="pack-img"
+            />
+            <h4>The Umugara Regalia</h4>
+            <p>
+              Male dancers wear the <em>Umugara</em>—a majestic golden hair
+              wig—while holding traditional wooden shields (<em>Ingabo</em>) and
+              ceremonial spears (<em>Icumu</em>).
+            </p>
+          </div>
+          <div class="pack-item">
+            <img
+              src="https://th.bing.com/th/id/OIP.2a4dru4iJtBoyDJteT2eQgHaE8?w=201&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+              alt="Umushayayo Dance"
+              class="pack-img"
+            />
+            <h4>The Umushayayo</h4>
+            <p>
+              The graceful women's dance. It utilizes soft, slow, fluid arm
+              movements designed to mimic the gentle majesty of birds and the
+              curves of longhorn cattle.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="guide-section">
+        <h2 class="section-heading">What to Expect During a Live Show</h2>
+        <p>
+          A standard live performance builds through distinct structural phases,
+          taking the audience on an emotional journey:
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="time-marker">The Call</div>
+            <div class="timeline-content">
+              <h3>1. The Introduction (Ukuvugira Inka)</h3>
+              <p>
+                The show opens with melodic praise poetry and rhythmic chanting.
+                Musicians warm up the large *Ingoma* drums while warriors gather
+                at the perimeter of the stage.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="time-marker">The Battle</div>
+            <div class="timeline-content">
+              <h3>2. The Warrior Dance (Imparamba)</h3>
+              <p>
+                The male dancers explode onto the stage. They perform rapid
+                foot-stomping maneuvers, shake their lion-mane wigs violently,
+                and leap high into the air to celebrate combat victories.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="time-marker">The Finale</div>
+            <div class="timeline-content">
+              <h3>3. Audience Integration & Celebration</h3>
+              <p>
+                The rhythms become celebratory. Performers frequently invite
+                visitors onto the floor to try out basic footwork step
+                adjustments and take group photos with the drummers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="guide-section">
+        <h2 class="section-heading">Where Can Visitors Experience Intore?</h2>
+        <p>
+          Intore is highly celebrated across Rwanda. You can easily find
+          authentic, professional performances at several main tourist
+          locations:
+        </p>
+
+        <div class="table-wrapper">
+          <table class="rules-table">
+            <thead>
+              <tr>
+                <th>Cultural Location Hub</th>
+                <th>What Makes It Special</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>The King's Palace Museum (Nyanza)</strong></td>
+                <td>
+                  Watch Intore dances in the exact geographical setting where
+                  they were born, right beside the reconstructed traditional
+                  royal palace huts.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Gorilla Briefing Center (Kinigi)</strong></td>
+                <td>
+                  Performers greet tracking groups every morning outside the
+                  Volcanoes National Park headquarters with energetic dances to
+                  fuel your safari spirits.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>The Cultural Village (Iby'Iwacu)</strong></td>
+                <td>
+                  Located near Musanze, this community-run village lets you
+                  interact directly with reformed poachers who now preserve
+                  heritage through daily dances.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Photography Rule</strong></td>
+                <td>
+                  Flash photography is fully allowed! Video recording is highly
+                  recommended to capture the incredible acoustic rhythm of the
+                  heavy drumming.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <div class="bottom-actions">
+        <a href="Rwanda-explore.html" class="big-return-btn">
+          <svg
+            class="btn-arrow"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Back to Explore Rwanda Hub</span>
+        </a>
+      </div>
+    </main>
+  </body>
+</html>

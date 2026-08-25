@@ -1,0 +1,388 @@
+/* ==========================================================================
+   1. DIGITAL FRAMEWORK RESET & SYSTEM CORE VARIABLE ARRAYS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Rich Galactic Deep Workspace Base */
+    --void-black: #060411;
+    --cyber-workspace-gradient: radial-gradient(circle at 50% 50%, #110d2d 0%, #03020a 100%);
+    
+    /* Neon Cybernetic High Contrast Accents */
+    --neon-cyan: #00f0ff;
+    --neon-cyan-glow: rgba(0, 240, 255, 0.45);
+    --neon-magenta: #ff007f;
+    --neon-purple: #7000ff;
+    
+    /* Glassmorphic Compositing Surface Vectors */
+    --surface-glass: rgba(14, 11, 36, 0.55);
+    --border-glass: rgba(255, 255, 255, 0.07);
+    --border-glass-focus: rgba(0, 240, 255, 0.4);
+    
+    /* Typography Palette Matrix */
+    --font-bright: #ffffff;
+    --font-dimmed: #7d799c;
+    --font-placeholder: #43405c;
+    
+    /* Global Speed Controls */
+    --interface-speed: cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--void-black);
+    background: var(--cyber-workspace-gradient);
+    color: var(--font-bright);
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   2. UPPER UTILITY NAVBAR BRANDING
+   ========================================================================== */
+.login-header {
+    width: 100%;
+    padding: 24px 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.header-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-core {
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--font-bright);
+}
+
+.brand-core span {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px var(--neon-cyan-glow);
+}
+
+.back-link {
+    color: var(--font-dimmed);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.25s var(--interface-speed);
+}
+
+.back-link:hover {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px var(--neon-cyan-glow);
+}
+
+/* ==========================================================================
+   3. BACKGROUND AMBIENT NEON GLOW ANCHORS
+   ========================================================================== */
+.auth-workspace {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 24px 40px 24px;
+    position: relative;
+}
+
+/* Fluid bokeh background orbs to provide high depth color dimensions */
+.cyber-blur-anchor-1, 
+.cyber-blur-anchor-2 {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.22;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cyber-blur-anchor-1 {
+    top: 20%;
+    left: 25%;
+    background-color: var(--neon-purple);
+}
+
+.cyber-blur-anchor-2 {
+    bottom: 15%;
+    right: 25%;
+    background-color: var(--neon-cyan);
+}
+
+/* ==========================================================================
+   4. GLASSMORPHIC INTERACTIVE CONTAINER BLOCK
+   ========================================================================== */
+.login-card-container {
+    position: relative;
+    z-index: 10;
+    background: var(--surface-glass);
+    border: 1px solid var(--border-glass);
+    width: 100%;
+    max-width: 440px;
+    border-radius: 24px;
+    padding: 45px 40px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: border-color 0.4s var(--interface-speed), box-shadow 0.4s ease;
+}
+
+.login-card-container:hover {
+    border-color: rgba(0, 240, 255, 0.15);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.6), 
+                0 0 40px rgba(112, 0, 255, 0.05);
+}
+
+/* Shield Identity Graphic Header Block */
+.card-branding-shield {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.shield-glyph {
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 16px auto;
+    color: var(--neon-cyan);
+    background: rgba(0, 240, 255, 0.07);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: 14px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+}
+
+.card-branding-shield h2 {
+    font-size: 1.65rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+}
+
+.card-subtitle {
+    font-size: 0.85rem;
+    color: var(--font-dimmed);
+    letter-spacing: 0.3px;
+}
+
+/* ==========================================================================
+   5. SMART FLOATING INPUT LABEL FLUID MECHANICS
+   ========================================================================== */
+.secure-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.input-group-field {
+    position: relative;
+    width: 100%;
+}
+
+/* Base input field setup */
+.input-group-field input {
+    width: 100%;
+    padding: 16px 16px 14px 16px;
+    background: rgba(4, 3, 13, 0.5);
+    border: 1px solid var(--border-glass);
+    border-radius: 12px;
+    font-size: 0.95rem;
+    color: var(--font-bright);
+    outline: none;
+    transition: border-color 0.3s var(--interface-speed), background-color 0.3s ease;
+}
+
+/* Pure CSS Floating Labels Framework using sibling selectors */
+.input-group-field label {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--font-dimmed);
+    font-size: 0.95rem;
+    pointer-events: none;
+    transition: transform 0.25s var(--interface-speed), 
+                font-size 0.25s var(--interface-speed), 
+                color 0.25s var(--interface-speed);
+}
+
+/* Hidden line highlight framework block */
+.input-highlight-bar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+    transition: width 0.35s var(--interface-speed), left 0.35s var(--interface-speed);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+/* Active interactive states for focus validation and placeholder checks */
+.input-group-field input:focus {
+    border-color: var(--border-glass-focus);
+    background: rgba(4, 3, 13, 0.8);
+}
+
+.input-group-field input:focus ~ label,
+.input-group-field input:not(:placeholder-shown) ~ label {
+    transform: translateY(-23px) scale(0.82);
+    left: 10px;
+    color: var(--neon-cyan);
+    padding: 0 6px;
+}
+
+.input-group-field input:focus ~ .input-highlight-bar {
+    width: 100%;
+    left: 0;
+}
+
+/* ==========================================================================
+   6. CHECKBOX UI UTILITIES & SWITCH CODES
+   ========================================================================== */
+.form-utilities-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    margin-top: -4px;
+}
+
+.checkbox-ui-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    color: var(--font-dimmed);
+}
+
+.checkbox-ui-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.custom-checkmark-box {
+    position: relative;
+    height: 16px;
+    width: 16px;
+    background-color: rgba(255,255,255,0.04);
+    border: 1px solid var(--border-glass);
+    border-radius: 4px;
+    margin-right: 8px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.checkbox-ui-label:hover input ~ .custom-checkmark-box {
+    border-color: rgba(0, 240, 255, 0.4);
+}
+
+.checkbox-ui-label input:checked ~ .custom-checkmark-box {
+    background-color: var(--neon-cyan);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 10px var(--neon-cyan-glow);
+}
+
+.custom-checkmark-box::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 5px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid var(--void-black);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-ui-label input:checked ~ .custom-checkmark-box::after {
+    display: block;
+}
+
+.recovery-trigger {
+    color: var(--font-dimmed);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.recovery-trigger:hover {
+    color: var(--neon-magenta);
+}
+
+/* ==========================================================================
+   7. NEON CTAS & BUTTON EMBED GLOW MODIFIERS
+   ========================================================================== */
+.auth-submit-btn {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+    border: none;
+    border-radius: 12px;
+    padding: 15px;
+    cursor: pointer;
+    overflow: hidden;
+    margin-top: 10px;
+    transition: transform 0.2s ease;
+}
+
+.auth-submit-btn:active {
+    transform: scale(0.98);
+}
+
+.btn-text {
+    position: relative;
+    z-index: 5;
+    color: var(--font-bright);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.btn-glow-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.auth-submit-btn:hover .btn-glow-layer {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   8. CARD STRUCTURAL FOOTER CHANNELS
+   ========================================================================== */
+.card-footer-navigation {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.85rem;
